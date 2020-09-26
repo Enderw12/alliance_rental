@@ -1,5 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 
+import 'package:alliance_rental/screens/cardAddScreen.dart';
+import 'package:alliance_rental/screens/paymentScreen.dart';
 import 'package:alliance_rental/screens/smsVerivficationScreen.dart';
 import 'package:alliance_rental/screens/userDataFormScreen.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
         LoginScreen.route: (context) => LoginScreen(),
         NumberVerificationScreen.route: (context) => NumberVerificationScreen(),
         UserDataFormScreen.route: (context) => UserDataFormScreen(),
+        CardAddScreen.route: (context) => CardAddScreen(),
+        PaymentScreen.route: (context) => PaymentScreen(),
       },
     );
   }

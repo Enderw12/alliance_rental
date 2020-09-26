@@ -1,5 +1,6 @@
 import 'package:alliance_rental/screens/userDataFormScreen.dart';
-import 'package:alliance_rental/widgets/titleWidget.dart';
+import 'package:alliance_rental/widgets/customFlatButtonWidget.dart';
+import 'package:alliance_rental/widgets/customFlexibleSpaceWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -13,8 +14,7 @@ class NumberVerificationScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        elevation: 10,
-        flexibleSpace: TitleWidget(),
+        flexibleSpace: CustomFlexibleSpaceWidget(showLogo: true),
         toolbarHeight: size.height * 0.1,
       ),
       body: Container(
@@ -136,27 +136,11 @@ class NumberVerificationScreen extends StatelessWidget {
                 horizontal: 0,
                 vertical: size.height * 0.01,
               ),
-              child: FlatButton(
-                color: Color.fromRGBO(20, 20, 32, 1),
-                minWidth: size.width,
-                height: size.height * 0.08,
-                onPressed: () {
-                  // TODO implement event call for 'Next' button
-                  Navigator.of(context).pushNamed(UserDataFormScreen.route);
-                },
-                child: SizedBox(
-                  width: size.width * 0.3,
-                  height: size.height * 0.035,
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text(
-                      'Далее',
-                      style: TextStyle(
-                        color: Color.fromRGBO(228, 154, 3, 1),
-                      ),
-                    ),
-                  ),
-                ),
+              child: CustomFlatButtonWidget(
+                size: size,
+                text: 'Далее',
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(UserDataFormScreen.route),
               ),
             ),
           ],

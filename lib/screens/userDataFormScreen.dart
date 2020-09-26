@@ -1,5 +1,6 @@
-import 'package:alliance_rental/widgets/titleWidget.dart';
-import 'package:flutter/gestures.dart';
+import 'package:alliance_rental/screens/cardAddScreen.dart';
+import 'package:alliance_rental/widgets/customFlatButtonWidget.dart';
+import 'package:alliance_rental/widgets/customFlexibleSpaceWidget.dart';
 import 'package:flutter/material.dart';
 
 //TODO Scrollable.ensureVisible implement scrolling to email field while it is focused
@@ -24,8 +25,8 @@ class _UserDataFormScreenState extends State<UserDataFormScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        elevation: 10,
-        flexibleSpace: TitleWidget(),
+        backgroundColor: Colors.transparent,
+        flexibleSpace: CustomFlexibleSpaceWidget(showLogo: true),
         toolbarHeight: size.height * 0.1,
       ),
       body: Container(
@@ -41,7 +42,7 @@ class _UserDataFormScreenState extends State<UserDataFormScreen> {
           children: [
             SizedBox(
               height: size.height * 0.65,
-              width: size.width * 0.9,
+              // width: size.width * 1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -111,27 +112,12 @@ class _UserDataFormScreenState extends State<UserDataFormScreen> {
                   children: [
                     Text(
                         'Продолжая вы даете согласие на обработку персональных данных'),
-                    FlatButton(
-                      color: Color.fromRGBO(20, 20, 32, 1),
-                      minWidth: size.width,
-                      height: size.height * 0.08,
+                    CustomFlatButtonWidget(
+                      text: 'Далее',
+                      size: size,
                       onPressed: () {
-                        // TODO
-                        // Navigator.of(context).pushNamed();
+                        Navigator.of(context).pushNamed(CardAddScreen.route);
                       },
-                      child: SizedBox(
-                        width: size.width * 0.3,
-                        height: size.height * 0.035,
-                        child: FittedBox(
-                          fit: BoxFit.contain,
-                          child: Text(
-                            'Далее',
-                            style: TextStyle(
-                              color: Color.fromRGBO(228, 154, 3, 1),
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                   ],
                 )),
